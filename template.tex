@@ -1,0 +1,620 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[AutoFakeBold]{LZUThesis}
+
+\begin{document}
+%=====%
+%
+% 封皮页填写内容
+%
+%=====%
+
+% 标题样式 使用 \title{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \title{{第一行}},  
+% 	      长标题 \title{{第一行}{第二行}}
+%             超长标题\tiitle{{第一行}{...}{第N行}}
+
+\title{{兰州大学本科生}{毕业论文（设计）模板制作}}
+
+
+
+% 标题样式 使用 \entitle{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \entitle{{First row}},  
+% 	      长标题 \entitle{{First row}{ Second row}}
+%             超长标题\entitle{{First row}{...}{ Next N row}}
+% 注意：  英文标题多行时 需要在开头加个空格 防止摘要标题处英语单词粘连。
+\entitle{{Undergraduate Thesis / Capstone Project }{\LaTeX Template Design for Lanzhou University}}
+
+\author{xiashj2021}
+\major{计算机科学与技术}
+\advisor{兰呆儿}
+\college{信息科学与工程学院}
+\grade{2021级}
+
+
+
+\maketitle
+
+%==============================%
+% ↓ ↓ ↓ 诚信说明页 授权说明书
+%==============================%
+
+% 1. 可以调整签字的宽度，现在是40
+% 2. 去掉raisebox的相关注释(注意上下大括号对应)，可以改变-5那个数字调整签名和横线的上下位置
+
+% 你的签名，signature.pdf 改为你的签名文件名，
+\mysignature{
+    % \raisebox{-5pt}{
+    \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 你手写的日期，signature.pdf 改为你的手写的日期文件名
+\mytime{
+    % \raisebox{-5pt}{
+    \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 承诺书页老师的手写签名，signature.pdf 改为老师的手写签名文件名
+\teachersignature{
+    % \raisebox{-5pt}{
+    \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 成绩页老师的手写签名，signature.pdf 改为老师的手写签名文件名
+\supervisorsignature{
+    % \raisebox{-5pt}{
+    \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师手写的时间，signature.pdf 改为老师的手写的日期文件名
+\teachertime{
+    % \raisebox{-5pSt}{
+    \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师手写的成绩
+\recommendedgrade{
+    % \raisebox{-5pt}{
+    \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+
+\makestatement
+
+%==============================%
+% ↑ ↑ ↑ 诚信说明页 授权说明书
+%==============================%
+
+
+%=====%
+% 论文（设计）成绩
+%=====%
+
+% 下面这些注释掉可以去掉成绩、评语什么的
+\supervisorcomment{论文结构合理，文献综述详实，研究方法具有创新性且论证严谨。研究工作量饱满，实验设计涵盖对比实验、消融实验等多维度验证，数据支撑坚实可靠。全文逻辑清晰，表述准确。综上，该毕业论文在理论创新与实践应用层面均达到较好水准，是一篇优秀的本科毕业论文。}
+
+
+\committeecomment{经答辩小组一致讨论，该论文通过答辩，成绩为优秀。}
+
+\finalgrade{}
+% 上面这些注释掉可以去掉成绩、评语什么的
+
+% 优秀论文进行推优答辩后启用
+% \outstandingcommitteecomment{经答辩小组一致讨论，该论文通过答辩，成绩为优秀。}
+
+\frontmatter
+
+
+
+% 中文摘要
+\ZhAbstract{兰大的毕业论文LaTeX模板比较稀缺，现有的LaTeX模板不能完全符合教务处的格式要求。因此在2013级核科学与技术学院的胡斌和沈周及2016级物理科学与技术学院的余航前辈的基础上，完善了该LaTeX模板。
+
+希望能为后来的同学提供一些便利吧，作为兰州大学开源社区的一份子，让我们秉持极客精神，为技术推广增添属于自己的力量。}{兰州大学；毕业论文模板}
+
+
+% 英文摘要
+\EnAbstract{LaTeX templates for theses at LZU are scarce, and existing templates do not fully comply with the Academic Affairs Office's formatting requirements. Therefore, based on the work of Bin Hu and Zhou Shen from the School of Nuclear Science and Technology in the class of 2013, as well as Hang Yu from the School of Physical Science and Technology in the class of 2016, the LaTeX template has been improved.
+
+We hope it will be convenient for future students. As members of the open source community at Lanzhou University, let's uphold the geek spirit and contribute to the promotion of technology.}
+{Lanzhou University; Undergraduate Thesis / Capstone Project Template}
+
+% 生成目录
+% \tableofcontents
+% 下面这个包含图表目录
+\customcontent
+
+
+% % 部分同学需要专业术语注释表，* 表示不加入目录
+% \chapter*{专业术语注释表}
+% \begin{longtable}{lll}
+%   \caption*{缩略词说明}\\
+%   SS & Spread Spectrum & 扩展频谱 \\
+%   PAPR & Peak to Average Power Ratio & 峰均比\\
+%   DCSK & Differential Chaos Shift Keying &差分混移位键控\\
+%   dasd & fdhfudw eqwrqw fasfasfs fewev wqfwefew &\tabincell{l}{太长了\\换行一下}\\
+% \end{longtable}
+
+
+% 文章主体
+\mainmatter
+
+\chapter{\texorpdfstring{绪 \quad 论}{绪论}}
+
+% ！学校要求的规范，绪论是单独的，不是第一章，但是老师们都是让作为第一章，这里我把它放在了论文里，如果你要让在外面，只需要把上面的 \mainmatter 这一句话放在“绪论内容后面，正文第一章前面”即可，也就是 \chapter{LaTeX部分用法简介} 这一句话上面
+
+这里是绪论，也可以说是引言，在LZUThesis.clc里面改，引言写什么呢，先凑字数，
+
+注意啊，段落在LaTeX里面是要空一行的，不要简单一个回车，编译过程中警告内容无需管
+
+\section{二级标题}
+
+绪论其实也可以有二级标题，要不然，论文要求：“包括毕业论文（设计）的研究目的、意义、范围、研究设想、方法、实验设计、选题依据等；还包括毕业论文（设计）研究领域的历史回顾，文献追溯，理论分析等内容”全部写成一堆不成？
+
+
+
+\chapter{LaTeX部分用法简介}
+
+注意啊，看这个教程，template.pdf配合template.tex\textbf{一起看}，才能学习latex怎么用的
+
+网页跳转怎么用？图片插入怎么用？图片横着两个并排站呢？代码怎么插入？表格听说挺复杂？公式听说也挺难的
+
+啥啥啥，你说你还不知道什么是LaTeX ，你去分不清XeLaTex、pdfLaTex，百度一下竟然还让我安装TexLive，这也就算了，甚至还有人说vscode？sublime text3？texstudio？Texmaker？我只是想写个论文排版方便一些，你要干嘛？
+
+上面这些问题，后面都会一点点介绍
+
+\section{用LaTeX需要安装什么}
+
+直接使用Overleaf作为在线LaTeX编辑器即可
+
+
+\section{常用的一些东西} % (fold)
+\label{sec:常用的一些东西}
+
+用到相关的直接到这里复制，然后修改就行
+
+\subsection{国际三线表格} % (fold)
+\label{sub:国际三线表格}
+
+\begin{table}[H]
+    \centering
+    \caption{二硫化钼纳米管参数}
+    \begin{tabular}{cccccc} % 控制表格的格式，可以是l,c,r
+        \toprule
+        参数 & m  & n  & \tabincell{c}{太长了                     \\换行一下\\原子数}  & 内径 & 长度\\
+        \midrule
+        数值 & 15 & 15 & 2880              & 2.3014nm & 9.95nm \\
+        \bottomrule
+    \end{tabular}
+    \label{tbl_mos2_nanotube}
+\end{table}
+
+这个注意，有多少列，后面就要有多少个c \footnote{否则会报错：Extra alignment tab has been changed to cr.有什么报错百度一下一般就找到了},这个c表示这一列居中(center)，靠左的话：l，右：r;
+
+那个label后面的名字自己取，但是不能有重复，是为了引用，比如这样，表格\ref{tbl_mos2_nanotube}，方程、图片也是这样引用的，好处是，中间加一个表格导致这个表格的序号变了也没事，你不用再去修改其他地方的引用
+
+\begin{lstlisting}[language = tex]
+\begin{table}[H]
+    \centering
+    \caption{二硫化钼纳米管参数}
+    \begin{tabular}{cccccc} % 控制表格的格式，可以是l,c,r
+    \toprule
+    参数& m & n & 原子数  & 内径 & 长度\\
+    \midrule
+    数值 & 15 & 15  & 2880 & 2.3014nm & 9.95nm \\
+    \bottomrule
+    \end{tabular}
+    \label{tbl_mos2_nanotube}
+\end{table}
+\end{lstlisting}
+
+\subsection{换页表格} % (fold)
+
+我是真的没想到有的人表格居然这么长……
+
+\begin{longtable}{cccccc}
+    \caption{二硫化钼纳米管参数}\label{tbl_mos2_nanotube2} \\
+    \toprule
+    参数   & m  & n  & 原子数  & 内径       & 长度         \\
+    \midrule
+    \endfirsthead  % 第一页页眉
+    
+    \multicolumn{6}{c}{\tablename\ \thetable{} (续)}\\
+    \toprule
+    参数   & m  & n  & 原子数  & 内径       & 长度         \\
+    \midrule
+    \endhead  % 后续页页眉
+    
+    \midrule
+    % \multicolumn{6}{r}{{下一页继续}} \\
+    \endfoot  % 页脚（除最后一页）
+    
+    \bottomrule
+    \endlastfoot  % 最后一页页脚
+
+    数值   & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值1  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值2  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值3  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值4  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值5  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值6  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值7  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值8  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值9  & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值10 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值11 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值12 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值13 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值14 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值15 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值16 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值17 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值18 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值19 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值20 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值21 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值22 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值23 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+    数值24 & 15 & 15 & 2880 & 2.3014nm & 9.95nm     \\
+\end{longtable}
+
+
+
+% subsection 国际三线表格 (end)
+
+
+\subsection{字体} % (fold)
+\label{sub:字体}
+
+\begin{table}[H]
+    \centering
+    \caption{字体}
+    \begin{tabular}{ccccccc} % 控制表格的格式
+        \toprule
+        名称 & 加粗           & 倾斜           & 宋体           & 仿宋             & 黑体          \\
+        \midrule
+        显示 & \textbf{兰朵儿} & \textit{兰朵儿} & \songti{兰朵儿} & \fangsong{兰朵儿} & \heiti{兰朵儿} \\
+        显示 & \textbf{ldr} & \textit{ldr} & \songti{ldr} & \fangsong{ldr} & \heiti{ldr} \\
+        \bottomrule
+    \end{tabular}
+    \label{tbl_font}
+\end{table}
+发现没，中文斜体没有效果的，你可以自定义，这个自己百度吧；中文加粗已经解决了该问题，注意这个文件第四行，开启伪加粗（2020.5.18），可以用bfserie或者textbf但是注意，win上bfserie效果好一些，mac上textbf好一些
+
+关于英文新罗马字体的说明：
+在windows上，引用mathptmx包，正文、公式中的英文就会变成新罗马（Times New Roman）字体，但是mac系统上，没有任何效果，还是默认的罗马字体（和Times New Roman很相似，QR两个单词区分明显），所以我在2.1.3以及之后的模板中加入了以下两个命令：
+
+\begin{lstlisting}[language = tex]
+\RequirePackage{mathptmx} % 加入这条命令会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些。
+\RequirePackage{fontspec} % 这一条在windows可有可无，效果相同，但是mac上必须。
+\end{lstlisting}
+
+但是mathptmx会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些。
+
+
+% subsection 常用的 (end)
+
+
+\subsection{图，并列排} % (fold)
+\label{sub:图_并列排}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[2007版徽章]{
+        \includegraphics[width=0.4\textwidth]{figures/lzu2007.png}
+    }
+    \subfloat[2020版徽章]{
+        \includegraphics[width=0.4\textwidth]{figures/lzu2020.png}
+    }
+    \caption{兰州大学本科生毕业论文（设计）徽章}
+    \label{fig_ldr}
+\end{figure}
+
+
+这一句代表这个图片宽度为一行文本宽度的$\frac{4}{10}$
+\begin{lstlisting}[language = tex]
+width=0.4\textwidth
+\end{lstlisting}
+
+
+
+% subsection 图_并列排 (end)
+
+
+\subsection{公式} % (fold)
+\label{sub:公式}
+所有的符号都要用美元符号包裹\$，需要用到某一个但是不知道，直接百度，基本上都有
+\begin{table}[H]
+    \centering
+    \caption{公式}
+    \begin{tabular}{cccccccccc} % 控制表格的格式
+        \toprule
+        名称 & 分数            & 下角标   & 上角标   & 矢量         & 根号            & 希腊字母     & 点乘      & 叉乘       & 矢量        \\
+        \midrule
+        显示 & $\frac{1}{2}$ & $O_2$ & $a^2$ & $\vec{AB}$ & $\sqrt[2]{3}$ & $\theta$ & $\cdot$ & $\times$ & $\vec{a}$ \\
+
+        \bottomrule
+    \end{tabular}
+    \label{tbl_gs}
+\end{table}
+
+但是有时候我们只是正文中想用$MoS_2$，它竟然斜体，不想斜体，我写了个命令，这样用\eqrm{MoS_2}，正的吧，常用的命令可以自定义
+
+\subsection{公式加粗、斜体、字体}
+
+公式、字母加粗、字体问题
+
+\begin{itemize}
+    \item[1.] 正文 \qquad \quad AHEMoS$\alpha \beta$
+    \item[2.] 公式 \qquad \quad $AHEMoS \alpha \beta$
+    \item[3.] mathbf \qquad $\mathbf{AHEMoS\alpha \beta}$
+    \item[4.] boldsymbol $\symbfit{AHEMoS\alpha \beta}$
+    \item[5.] mathbb \qquad $\mathbb{AHEMoS\alpha \beta}$
+        % \item [5. bm] $\bm{AHEMoS\alpha \beta}$
+\end{itemize}
+
+这个加粗、斜体、英文字体（含正文和公式内字体），有不同的处理方式，在 .cls 模板文件文件搜索 bm 查看详细说明
+
+\subsection{一些特殊符号}
+
+\begin{itemize}
+    \item 普朗克常量 hslash ：$\hslash$
+    \item 普朗克常量 hbar ：$\hbar$
+    \item 花体 mathscr ：$\mathscr{ABCFR}$
+    \item 花体 mathcal ：$\mathcal{ABCFR}$
+    \item Fraktur字母 ：$\mathfrak{ABCFR}$
+\end{itemize}
+
+
+
+% subsection 公式 (end)
+
+\subsection{左边大括号} % (fold)
+\label{sub:左边大括号}
+
+\begin{equation}
+    \left\{
+    \begin{array}{rcl}
+        \vec{e_1} & = \frac{3a}{2} \vec{i} + \frac{\sqrt{3a}}{2} \vec{j} \\
+        \vec{e_2} & = \frac{3a}{2} \vec{i} - \frac{\sqrt{3a}}{2} \vec{j}
+    \end{array}
+    \right.
+    \label{e1e2}
+\end{equation}
+
+注意后面有个方程的编号，如果想取消，把上下的两个$equation$改成$equation*$
+
+\begin{equation*}
+    \left\{
+    \begin{array}{rcl}
+        \vec{e_1} & = \frac{3a}{2} \vec{i} + \frac{\sqrt{3a}}{2} \vec{j} \\
+        \vec{e_2} & = \frac{3a}{2} \vec{i} - \frac{\sqrt{3a}}{2} \vec{j}
+    \end{array}
+    \right.
+    \label{e1e2_2}
+\end{equation*}
+
+% subsection 左边大括号 (end)
+
+\subsection{复杂公式} % (fold)
+\label{sub:复杂公式}
+不会输出的符号，请百度，啥都有
+
+\begin{equation}
+    \hat{HQR}=\frac{\epsilon}{2}\hat{\sigma}_{z}-\frac{\Delta}{2}\hat{\sigma}_{x}+\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\sum_{k}\frac{g_{k}}{2}\hat{\sigma}_{z}(\hat{b}_{k}+\hat{b}_{k}^{\dagger})\label{eq:sbm}
+\end{equation}
+
+% subsection 复杂公式 (end)
+
+
+\subsection{等号对齐站} % (fold)
+\label{sub:等号对齐站}
+
+主要是用这个aligned放在了方程的环境里，等号前面\&控制对齐，每一行后面双斜杠换行
+
+\begin{equation}
+    \begin{aligned}
+        \vec{CH} & = m\cdot \vec{e_1} + n\cdot \vec{e_2}                          \\
+                 & = \frac{3(m+n)a}{2} \vec{i} + \frac{\sqrt{3}(m-n)a}{2} \vec{j}
+    \end{aligned}
+    \label{ch}
+\end{equation}
+
+% subsection 等号对齐站 (end)
+
+\subsection{矩阵乘法} % (fold)
+\label{sub:矩阵乘法}
+
+其实就是几个array组合
+
+\begin{equation}
+    \left[
+        \begin{array}{c}
+            x' \\
+            y' \\
+        \end{array}
+        \right]=
+    \left[
+        \begin{array}{cc}
+            cos \theta   & sin \theta \\
+            - sin \theta & cos \theta
+        \end{array}
+        \right]
+    \cdot
+    \left[
+        \begin{array}{c}
+            x \\
+            y \\
+        \end{array}
+        \right]
+\end{equation}
+% subsection 矩阵乘法 (end)
+
+
+
+\subsection{附页代码} % (fold)
+\label{sub:附页代码}
+可以在LZUThesis.clc里面修改代码格式
+
+java代码
+\begin{lstlisting}[language = java]
+System.out.print("兰朵儿")
+// 试一下中文注释
+\end{lstlisting}
+
+
+tex代码
+\begin{lstlisting}[language = tex]
+width=0.3\textwidth
+% 注释
+\end{lstlisting}
+
+python代码
+\begin{lstlisting}[language = python]
+print("兰朵儿")
+# 注释
+\end{lstlisting}
+
+matlab代码有专门的库，但是没必要高亮太多，而且中文适配有问题，直接按照下面这个就可以
+\begin{lstlisting}[language = matlab]
+    display("兰朵儿")
+    % 注释
+\end{lstlisting}
+
+% subsection 附页代码 (end)
+
+伪代码
+
+\begin{algorithm}[H]
+    \caption{PMHSS 算法\label{Alg:PMHSS}}
+    \begin{algorithmic}[1]
+        \State 给定一个初值 $ x^{(0)} \in C^{n} $  和常数 $\alpha>0$
+        \For{$k = 1,2, \ldots $ 直到序列 $\{x^{(k)}\}_{k=0}^{\infty}$ 收敛}
+        \State 解方程: $(\alpha V+W)x^{(k+\frac{1}{2})}=(\alpha V-i T)x^{(k)}+b $
+        \State 解方程: $(\alpha V+T)x^{(k+1)}=(\alpha V+i W)x^{(k+\frac{1}{2})}-i b$
+        \EndFor
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{参考文献} % (fold)
+\label{sub:参考文献}
+
+这个，百度学术、谷歌学术等网站都可以导出bibtex格式的参考文献（知网也可以），直接放在bib/template.bib文件里\newupcite{GB,tenne1992polyhedral,tussyadiah2015hotels,cadoret1990early}。测试不同情况：
+
+\begin{itemize}
+    \item 原本科模板\newupcite{tenne1992polyhedral}
+    \item 中文“等”测试\cite{JHXY202209006}
+    \item 大写字母测试\cite{PhysRevLett.108.024101}
+    \item 连续显示\cite{kim-2014-convolutional,CN114818809B,1015728912.nh}
+    \item 右上角\newupcite{olesen2012economic,1023904525.nh}
+    \item 中文参考文献 \cite{李刚2006基于动态光谱的脉搏血氧测量精度分析}
+\end{itemize}
+
+
+具体怎么用可以百度，我这里告诉你什么可以用，但是具体的，建议百度，更靠谱一些。
+
+
+有参考文献时，编译要经过4步，直接XeLaTeX --> BibTeX --> XeLaTeX --> XeLaTeX，不然很多问题，vscode配置以后很方便，以下内容放在设置中，重新打开vscode即可
+
+引用网络资源时链接格式规范化\newupcite{JSGG2024110800A,wang2021building,streamlit}。
+
+测试右上角\newupcite{key,johnstone2005had}
+
+\subsubsection{中英文参考文献说明} % (fold)
+感谢潘麒的代码贡献（\url{https://gitee.com/versemonger}）
+进一步说明，对于中文参考文献，建议添加条目 language={中文} 这一行，否则多个作者，不是“等.”而是 “et al.”\newupcite{XTYY202206018}
+\begin{lstlisting}[language = tex]
+@article{XTYY202206018,
+    author = {郝超 and 裘杭萍 and 孙毅},
+    title = {融合BERT和图注意力网络的多标签文本分类},
+    journal = {计算机系统应用},
+    language = {中文},
+    volume = {31},
+    number = {06},
+    pages = {167-174},
+    year = {2022}
+}
+\end{lstlisting}
+
+
+% subsection 参考文献 (end)
+
+% section 图标等常用的教程 (end)
+
+\subsection{引用图、表、公式、章节} % (fold)
+
+为什么要引用？不直接写数字？因为图表顺序变化时，引用的地方会自动变化。每次更加新引用，请四步走编译
+
+引用的地方加label，自己写个名字，可以是中文，然后引用的地方如下：
+
+如图\ref{fig_ldr}所示
+
+如公式\eqref{e1e2}所示，会自动带括号
+
+如表\ref{tbl_gs}所示
+
+在\ref{sub:参考文献}中已经提及
+
+% \input{test.tex}
+
+% 论文后部
+\backmatter
+
+
+%=======%
+% 引入参考文献文件
+%=======%
+\bibdatabase{bib/template} % bib文件名称 仅修改bib/ 后部分
+\printbib
+% \nocite{*} %显示数据库中有的，但是正文没有引用的文献
+
+
+
+\Appendix
+
+这里是附录页，附上你的程序或必要的相关知识
+
+{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX
+
+\section{参考书目}
+\begingroup
+\makeatletter
+\renewenvironment{thebibliography}[1]{%
+  \section*{}% 清除默认标题
+  \vspace{-\baselineskip}% 消除标题行间距
+  \list{\@biblabel{\@arabic\c@enumiv}}{
+    \setlength{\itemsep}{0pt} % 条目间距
+    \setlength{\parskip}{0pt} % 段落间距
+    \setlength{\parsep}{0pt}  % 段落内间距
+    \setlength{\parskip}{0pt}% 段落间距0
+    \setlength{\partopsep}{0pt}% 部分顶部间距0
+    \setlength{\topsep}{0pt}% 列表与上下文间距0
+    \setlength{\parindent}{0pt}% 段落首行缩进0
+    \setlength{\leftmargin}{0pt}% 左侧缩进0
+    \setlength{\itemindent}{0pt}% 项目内容缩进0
+    \leftmargin 1.1em
+    \@tempdima 1.1em
+    \advance\leftmargin\labelsep
+    \usecounter{enumiv}}}
+  {\def\@noitemerr{}
+  \endlist}
+\makeatother
+
+% \renewcommand{\refname}{}
+% \renewcommand{\bibname}{}
+\begin{thebibliography}{99} % 数字99表示最多支持99条参考文献（按需调整）
+\bibitem{1} 李航. 机器学习方法[M]. 北京：清华大学出版社, 2022.
+\end{thebibliography}
+\endgroup
+
+\Thanks
+
+这里是致谢页，你可以在这里致谢你的舍友，老师，朋友，或者我。现在本科生论文的致谢部分也在查重范围内了。
+
+\Grade % 这一句才是成绩页，上面是填写
+
+% 优秀论文进行推优答辩后启用
+% \OutstandingGrade
+
+\end{document}
