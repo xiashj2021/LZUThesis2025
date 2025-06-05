@@ -3,8 +3,8 @@ Undergraduate Thesis / Capstone Project LaTeX Template Design for Lanzhou Univer
 [Thesis specifications](https://jwc.lzu.edu.cn/tongzhigonggao/shijianjiaoxue/2024/1021/278405.html)
 ## How to use
 1. Open the [Overleaf](https://www.overleaf.com/) website.
-2. [Click this](https://github.com/xiashj2021/LZUThesis2025/releases/tag/v1.0.0) to download the .zip file, then upload it at [Overleaf](https://www.overleaf.com/).  
-Click: `New Project -> Upload Project` (you can upload the .zip file you just downloaded).  
+2. [Click this](https://github.com/xiashj2021/LZUThesis2025/releases/tag/v1.0.0) to download the `LZUThesis.zip` file, then upload it at [Overleaf](https://www.overleaf.com/).  
+Click: `New Project -> Upload Project` (you can upload the `LZUThesis.zip` file you just downloaded).  
 3. Modify the compilation method.  
 In the upper left corner of the `Menu`, change `pdfLaTeX` to `XeLaTeX` in `Settings -> Compiler`!
 
