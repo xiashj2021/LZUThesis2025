@@ -1,5 +1,5 @@
 # LZUThesis2025
-Undergraduate Thesis / Capstone Project LaTeX Template Design for Lanzhou University
+Undergraduate Thesis / Capstone Project LaTeX Template Design for Lanzhou University  
 [Thesis specifications](https://jwc.lzu.edu.cn/tongzhigonggao/shijianjiaoxue/2024/1021/278405.html)
 ## How to use
 1. Open the [Overleaf](https://www.overleaf.com/) website.
